@@ -6,6 +6,16 @@ Category page
 
 
 {% block content %}
+<form action="category.html" method="POST" class="py-3">
+
+    <div class="form_group my-3">
+        <label for="category">Loại sản phẩm</label>
+        <input name="category" type="text">
+    </div>
+
+    <button type="submit">Thêm loại sản phẩm</button>
+</form>
+
 <table class="table table-bordered table-hover">
     <tr>
         <th>Id</th>

@@ -3,3 +3,47 @@
 {% block header %}
 User page
 {% endblock %}
+
+{% block content %}
+<form method="POST" class="py-3">
+    <div class="form_group my-3">
+        <label>Name</label>
+        <input name="name" type="text">
+    </div>
+    <div class="form_group my-3">
+        <label>Email</label>
+        <input name="email" type="email">
+    </div>
+    <div class="form_group my-3">
+        <label>User name</label>
+        <input name="username" type="text">
+    </div>
+    <div class="form_group my-3">
+        <label>Password</label>
+        <input name="password" type="password">
+    </div>
+    <div class="form_group my-3">
+        <label>Avatar</label>
+        <input name="avatar" type="text">
+    </div>
+
+
+    <button type="submit">Sign in</button>
+</form>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Avatar</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Type</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
