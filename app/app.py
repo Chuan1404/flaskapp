@@ -1,6 +1,7 @@
 from flask import render_template, request
 from app import app
 from controller import getCategory
+import sys
 
 
 @app.route('/')
@@ -15,8 +16,8 @@ def route(type=None):
     elif type == 'product':
         pass
     elif type == 'category':
-        print(getCategory())
-
+        data = getCategory()
+        
     return render_template(type + '.html', data=data)
 
 

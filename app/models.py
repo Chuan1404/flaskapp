@@ -28,9 +28,11 @@ class Category(BaseModel):
     __tablename__ = 'categories'
 
     name = Column(String(100), nullable = False)
-
     # RELATIONSHIP
     products = relationship('Product', backref='categories', lazy=True)
+
+    def __str__(self):
+        return self.name
 
 class Product(BaseModel):
     __tablename__ = 'products'

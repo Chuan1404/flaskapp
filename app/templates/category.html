@@ -3,3 +3,19 @@
 {% block header %}
 Category page
 {% endblock %}
+
+
+{% block content %}
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.id}}</td>
+        <td>{{d.name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
