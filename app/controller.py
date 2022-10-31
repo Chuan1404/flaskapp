@@ -31,7 +31,8 @@ def getCategory():
 def addProduct(name, description='', price=0, image=None, category_id=None, owner_id=None):
     product = Product(name=name, 
     description=description,
-    price=price,image=image,
+    price=price,
+    image=image,
     category_id=category_id,
     owner_id=owner_id)
 
@@ -40,7 +41,3 @@ def addProduct(name, description='', price=0, image=None, category_id=None, owne
 def getProduct():
     return Product.query.all()
 
-# with app.app_context():
-#     addCategory('Phone')
-#     addCategory('Car')
-#     addCategory('Computer')

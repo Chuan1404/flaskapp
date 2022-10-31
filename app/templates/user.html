@@ -42,7 +42,12 @@ User page
     </tr>
     {% for d in data %}
     <tr>
-
+        <td>{{d.id}}</td>
+        <td><img width="100" src="{{d.avatar}}" alt=""></td>
+        <td>{{d.name}}</td>
+        <td>{{d.email}}</td>
+        <td>{{d.username}}</td>
+        <td>{{d.user_role}}</td>
     </tr>
     {% endfor %}
 </table>

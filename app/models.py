@@ -1,6 +1,6 @@
 from app import db, app
 from datetime import datetime
-from sqlalchemy import Column, String, Boolean, Integer, Float, DateTime, ForeignKey
+from sqlalchemy import Column, String, Text, Boolean, Integer, Float, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
 class BaseModel(db.Model):
@@ -16,7 +16,7 @@ class User(BaseModel):
     username = Column(String(20), nullable = False)
     password = Column(String(10), nullable = False)
     active = Column(Boolean, default = False)
-    avatar = Column(String(100))
+    avatar = Column(String(1000))
     joined_data = Column(DateTime, default = datetime.now())
     user_role = Column(Integer, default = 0) # 0 = USER, 1 = ADMIN 
 
@@ -38,9 +38,9 @@ class Product(BaseModel):
     __tablename__ = 'products'
 
     name = Column(String(100), nullable = False) 
-    description = Column(String(100))
+    description = Column(String(300))
     price = Column(Float, default = 0)
-    image = Column(String(100))
+    image = Column(String(1000))
 
     # FOREIGN KEYS
     category_id = Column(Integer, ForeignKey(Category.id), nullable = False)

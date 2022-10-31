@@ -5,15 +5,56 @@ Product page
 {% endblock %}
 
 {% block content %}
+
+<form method="POST" class="py-3">
+    <div class="form_group my-3">
+        <label>Name</label>
+        <input name="name" type="text">
+    </div>
+    <div class="form_group my-3">
+        <label>Description</label>
+        <input name="description" type="text">
+    </div>
+    <div class="form_group my-3">
+        <label>Price</label>
+        <input name="price" type="text">
+    </div>
+    <div class="form_group my-3">
+        <label>image</label>
+        <input name="image" type="text">
+    </div>
+    <div class="form_group my-3">
+        <label>category Id</label>
+        <input name="category_id" type="number">
+    </div>
+    <div class="form_group my-3">
+        <label>User Id</label>
+        <input name="owner_id" type="number">
+    </div>
+
+
+    <button type="submit">Add product</button>
+</form>
+
 <table class="table table-bordered table-hover">
     <tr>
         <th>Id</th>
+        <th>Image</th>
         <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>category Id</th>
+        <th>User Id</th>
     </tr>
     {% for d in data %}
     <tr>
         <td>{{d.id}}</td>
+        <td><img width='100px'src="{{d.image}}" alt=""></td>
         <td>{{d.name}}</td>
+        <td>{{d.description}}</td>
+        <td>{{d.price}}</td>
+        <td>{{d.category_id}}</td>
+        <td>{{d.owner_id}}</td>
     </tr>
     {% endfor %}
 </table>
